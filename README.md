@@ -34,7 +34,7 @@ BPM_Skills/
 │   ├── intermediate/       # Outputs between pipeline stages
 │   └── output/             # Final datasets and generated skills
 │
-├── scripts/
+├── src/
 │   ├── bpm_books_merger.py
 │   ├── sections_to_competence_mapper.py
 │   ├── content_knowledge_dimension_classifier.py
@@ -114,7 +114,7 @@ BPM_Skills/
 │   ├── intermediate/       # Outputs between pipeline stages
 │   └── output/             # Final datasets and generated skills
 │
-├── scripts/
+├── src/
 │   ├── bpm_books_merger.py
 │   ├── sections_to_competence_mapper.py
 │   ├── content_knowledge_dimension_classifier.py
