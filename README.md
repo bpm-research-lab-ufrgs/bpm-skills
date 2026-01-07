@@ -49,7 +49,7 @@ BPM_Skills/
 ├── requirements.txt
 ├── README.md
 └── LICENSE
-
+```
 ### ⚙️ Ordem de Execução (Obrigatória)
 A ordem de execução é crítica, pois os passos seguintes consomem os resultados dos anteriores. Execute os scripts (localizados em `src/`) nesta sequência:
 
