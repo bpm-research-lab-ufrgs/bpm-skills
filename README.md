@@ -30,9 +30,8 @@ Este projeto implementa um *pipeline* que transforma índices de múltiplos livr
 BPM_Skills/
 │
 ├── data/
-│   ├── input/              # Raw input spreadsheets (books, syllabi)
-│   ├── intermediate/       # Outputs between pipeline stages
-│   └── output/             # Final datasets and generated skills
+│   ├── bpm_skills_pipeline/            # BPM pipeline execution data (input → output)
+│   └── Baselines_Cross-Domain-Gen/     # Baseline experiments and generalization results
 │
 ├── src/
 │   ├── bpm_books_merger.py
@@ -110,9 +109,8 @@ This repository contains a sequence of scripts that transform multiple BPM book 
 BPM_Skills/
 │
 ├── data/
-│   ├── input/              # Raw input spreadsheets (books, syllabi)
-│   ├── intermediate/       # Outputs between pipeline stages
-│   └── output/             # Final datasets and generated skills
+│   ├── bpm_skills_pipeline/            # BPM pipeline execution data (input → output)
+│   └── Baselines_Cross-Domain-Gen/     # Baseline experiments and generalization results
 │
 ├── src/
 │   ├── bpm_books_merger.py
