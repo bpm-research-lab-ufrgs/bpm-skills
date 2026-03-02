@@ -30,24 +30,24 @@ Este projeto implementa um *pipeline* que transforma índices de múltiplos livr
 BPM_Skills/
 │
 ├── data/
-│   ├── bpm_skills_pipeline/            # BPM pipeline execution data (input → output)
-│   └── Baselines_Cross-Domain-Gen/     # Baseline experiments and generalization results
+│   ├── bpm_skills_pipeline/            # Dados de execução do pipeline BPM (entrada → saída)
+│   └── Baselines_Cross-Domain-Gen/     # Experimentos com baselines e resultados de generalização
 │
-├── src/
-│   ├── bpm_books_merger.py
-│   ├── sections_to_competence_mapper.py
-│   ├── content_knowledge_dimension_classifier.py
-│   ├── merge_contents_and_competences.py
-│   ├── competence_bloom_classifier.py
-│   ├── skills_generator.py
-│   └── skills_deduplicator.py
+├── src/                                            
+│   ├── bpm_books_merger.py                         
+│   ├── sections_to_competence_mapper.py            
+│   ├── content_knowledge_dimension_classifier.py   
+│   ├── merge_contents_and_competences.py           
+│   ├── competence_bloom_classifier.py          
+│   ├── skills_generator.py                        
+│   └── skills_deduplicator.py                     
 │
 ├── config/
-│   └── config.json         # Centralized configuration (models, thresholds)
+│   └── config.json                    # Configuração centralizada (modelos, limiares)
 │
-├── requirements.txt
-├── README.md
-└── LICENSE
+├── requirements.txt                                
+├── README.md                                      
+└── LICENSE                                         
 ```
 ### ⚙️ Ordem de Execução (Obrigatória)
 A ordem de execução é crítica, pois os passos seguintes consomem os resultados dos anteriores. Execute os scripts (localizados em `src/`) nesta sequência:
