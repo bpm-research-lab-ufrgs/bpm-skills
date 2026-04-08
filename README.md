@@ -30,8 +30,10 @@ Este projeto implementa um *pipeline* que transforma índices de múltiplos livr
 BPM_Skills/
 │
 ├── data/
-│   ├── bpm_skills_pipeline/            # Dados de execução do pipeline BPM (entrada → saída)
-│   └── Baselines_Cross-Domain-Gen/     # Experimentos com baselines e resultados de generalização
+│   ├── Baselines_Cross-Domain-Gen/        # Baseline experiments and cross-domain generalization results
+│   ├── Independent Expert Panel Validation/  # Expert validation data (questionnaire responses and analysis)
+│   ├── Moodle log analysis/              # Moodle logs used for behavioral/learning analysis
+│   └── bpm_skills_pipeline_data/         # BPM pipeline execution data (input → output)
 │
 ├── src/                                            
 │   ├── bpm_books_merger.py                         
@@ -109,9 +111,11 @@ This repository contains a sequence of scripts that transform multiple BPM book 
 BPM_Skills/
 │
 ├── data/
-│   ├── bpm_skills_pipeline/            # BPM pipeline execution data (input → output)
-│   └── Baselines_Cross-Domain-Gen/     # Baseline experiments and generalization results
-│
+│   ├── Baselines_Cross-Domain-Gen/        # Baseline experiments and cross-domain generalization results
+│   ├── Independent Expert Panel Validation/  # Expert validation data (questionnaire responses and analysis)
+│   ├── Moodle log analysis/              # Moodle logs used for behavioral/learning analysis
+│   └── bpm_skills_pipeline_data/         # BPM pipeline execution data (input → output)
+|
 ├── src/
 │   ├── bpm_books_merger.py
 │   ├── sections_to_competence_mapper.py
