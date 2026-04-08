@@ -31,7 +31,7 @@ BPM_Skills/
 │
 ├── data/
 │   ├── Baselines_Cross-Domain-Gen/        # Baseline experiments and cross-domain generalization results
-│   ├── Independent Expert Panel Validation/  # Expert validation data (questionnaire responses and analysis)
+│   ├── Independent Expert Panel Validation/  # Expert validation data (questionnaire responses)
 │   ├── Moodle log analysis/              # Moodle logs used for behavioral/learning analysis
 │   └── bpm_skills_pipeline_data/         # BPM pipeline execution data (input → output)
 │
@@ -112,7 +112,7 @@ BPM_Skills/
 │
 ├── data/
 │   ├── Baselines_Cross-Domain-Gen/        # Baseline experiments and cross-domain generalization results
-│   ├── Independent Expert Panel Validation/  # Expert validation data (questionnaire responses and analysis)
+│   ├── Independent Expert Panel Validation/  # Expert validation data (questionnaire responses)
 │   ├── Moodle log analysis/              # Moodle logs used for behavioral/learning analysis
 │   └── bpm_skills_pipeline_data/         # BPM pipeline execution data (input → output)
 |
