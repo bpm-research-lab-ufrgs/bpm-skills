@@ -1,0 +1,62 @@
+import pandas as pd
+from sentence_transformers import SentenceTransformer
+from sklearn.cluster import AgglomerativeClustering
+
+# 1. Unidades de Registro extraídas 
+
+recording_units = [
+    # Termos chave
+    "model", "analyze", "design", "implement",
+    "use support tools", "manage processes", 
+    "process discovery", "modeling", "analysis", 
+    "redesign", "automation", "evaluation and measurement", 
+    "change management",
+    
+    # Competências da Tabela 1 (Nobre et al.) e Tabela 2 (SBC RF)
+    "Model, analyze, design, and implement business processes",
+    "Work with BPM support tools",
+    "Manage organizational processes by describing their operation",
+    "evaluating their performance",
+    "implementing changes in their operation",
+    
+    # Competências e Elementos da Tabela 3 e 4 (IS2020)
+    "Explain the characteristics of a process and different perspectives",
+    "Use a BPM tool to design and implement business process models",
+    "Choose appropriate process discovery techniques",
+    "Design a Process Architecture",
+    "Analyze an AS-IS business process using appropriate techniques",
+    "Use process improvement methods and implement TO-BE processes",
+    "Evaluate techniques and tools that support monitoring of business processes",
+    "Performance measures",
+    "Issue root cause analysis and documentation"
+]
+
+# 2. Carregando o modelo de NLP para gerar os Embeddings Semânticos
+print("Carregando o modelo de linguagem (all-MiniLM-L6-v2)...")
+model = SentenceTransformer('all-MiniLM-L6-v2')
+
+# 3. Convertendo os textos para vetores numéricos (Embeddings)
+print("Gerando embeddings semânticos a partir dos termos do texto...")
+embeddings = model.encode(recording_units)
+
+# 4. Agrupamento (Clustering) por proximidade semântica
+# Distância de cosseno garante a "semantic proximity" citada no texto
+print("Agrupando as unidades de registro em 5 categorias...")
+clustering_model = AgglomerativeClustering(n_clusters=5, metric='cosine', linkage='average')
+cluster_labels = clustering_model.fit_predict(embeddings)
+
+# 5. Estruturando e exibindo os resultados
+df_results = pd.DataFrame({
+    'Cluster': cluster_labels,
+    'Recording Unit': recording_units
+})
+
+# Ordenando para mostrar os grupos juntos
+df_results = df_results.sort_values(by='Cluster')
+
+print("\n=== RESULTADO DO AGRUPAMENTO SEMÂNTICO (BPM Competencies) ===")
+for cluster_id in range(5):
+    print(f"\nCategoria / Cluster {cluster_id}:")
+    items = df_results[df_results['Cluster'] == cluster_id]['Recording Unit'].tolist()
+    for item in items:
+        print(f" - {item}")
